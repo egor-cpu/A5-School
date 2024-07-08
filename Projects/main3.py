@@ -1,0 +1,6 @@
+f = open("zadanie24_1.txt", "r")
+data = f.read()
+f.close()
+data = data.replace("A", " ").replace("C", " ").split()
+data = list(map(len, data))
+print(max(data))
