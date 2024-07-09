@@ -1,0 +1,9 @@
+import telebot
+import random
+token = "7269489037:AAEJ3dEjUMwGz1GL7FEYlDjeUmJlIlUY-_o"
+bot = telebot.TeleBot(token)
+words = ["слон", "торт", "рот", "пальма", "песок", "краб", "лось", "восемь", "телефон", "лак"]
+@bot.message_handler(commands=["start"])
+def start(message):
+    bot.send_message(message.chat.id, random.choice(words))
+bot.polling()
